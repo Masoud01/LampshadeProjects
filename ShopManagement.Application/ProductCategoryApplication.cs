@@ -58,7 +58,7 @@ namespace ShopManagement.Application
 
         List<ProductCategoryViewModel> IProductCategoryApplication.Search(ProductCategorySearchModel searchModel)
         {
-            return _productCategoryRepository.search(searchModel);
+            return _productCategoryRepository.Search(searchModel);
         }
     }
 }

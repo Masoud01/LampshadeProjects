@@ -13,8 +13,9 @@ namespace _0_Framework.Application
         public OperationResult()
         {
             IsSuccedead = false;
+            Message = "";
         }
-        public OperationResult Succesdead(string message ="عملیات با موفقیت انجام شد")
+        public OperationResult Succesdead(string message = "عملیات با موفقیت انجام شد")
         {
             IsSuccedead = true;
             Message = message;

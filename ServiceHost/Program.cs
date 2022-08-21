@@ -8,7 +8,7 @@ var connectionString = builder.Configuration.GetConnectionString("LampshadeDB");
 // Add services to the container.
 builder.Services.AddRazorPages();
 //Services Project
-ShopManagementBootstrapper.Configure(builder.Services,connectionString);
+ShopManagementBootstrapper.Configure(builder.Services, connectionString);
 
 var app = builder.Build();
 
@@ -25,11 +25,11 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapRazorPages();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+    endpoints.MapDefaultControllerRoute();
+});
 
 app.Run();

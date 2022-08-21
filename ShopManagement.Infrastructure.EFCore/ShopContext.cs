@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace ShopManagement.Infrastructure.EFCore
 {
-    public class ShopContext:DbContext
+    public class ShopContext : DbContext
     {
         public DbSet<ProductCategory> ProductCategories { get; set; }
-        public ShopContext(DbContextOptions<ShopContext> options):base(options)
+        public ShopContext(DbContextOptions<ShopContext> options) : base(options)
         {
 
         }

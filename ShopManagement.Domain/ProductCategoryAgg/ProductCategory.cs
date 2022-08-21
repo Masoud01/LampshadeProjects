@@ -20,7 +20,7 @@ namespace ShopManagement.Domain.ProductCategoryAgg
 
         public ProductCategory(
             string name, string description,
-            string picture, string pictureAlt, 
+            string picture, string pictureAlt,
             string pictureTitle, string metaKeyword,
             string metaDescription, string slug)
         {
@@ -36,7 +36,7 @@ namespace ShopManagement.Domain.ProductCategoryAgg
 
         public void Edit(
             string name, string description,
-            string picture, string pictureAlt, 
+            string picture, string pictureAlt,
             string pictureTitle, string metaKeyword,
             string metaDescription, string slug)
         {

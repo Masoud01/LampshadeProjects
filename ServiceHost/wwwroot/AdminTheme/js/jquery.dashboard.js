@@ -24,62 +24,62 @@
         }).appendTo("body").fadeIn(200);
       }
 
-      $.plot($(selector),
-          [ { data: data1,
-            label: labels[0],
-            color: colors[0]
-          },
-          { data: data2,
-            label: labels[1],
-            color: colors[1]
-          }
-        ],
-        {
-            series: {
-               lines: {
-              show: true,
-              fill: true,
-              lineWidth: 1,
-              fillColor: {
-                colors: [ { opacity: 0.0 },
-                          { opacity: 0.7 }
-                        ]
-              }
-            },
-            points: {
-              show: true
-            },
-            shadowSize: 0
-            },
-            legend: {
-            position: 'nw'
-          },
-          grid: {
-            hoverable: true,
-            clickable: true,
-            borderColor: borderColor,
-            borderWidth: 0,
-            labelMargin: 10,
-            backgroundColor: bgColor
-          },
-          yaxis: {
-            min: 0,
-            max: 15,
-            color: 'rgba(0,0,0,0)'
-          },
-          xaxis: {
-            color: 'rgba(0,0,0,0)'
-          },
-          tooltip: true,
-          tooltipOpts: {
-              content: '%s: Value of %x is %y',
-              shifts: {
-                  x: -60,
-                  y: 25
-              },
-              defaultTheme: false
-          }
-      });
+    //  $.plot($(selector),
+    //      [ { data: data1,
+    //        label: labels[0],
+    //        color: colors[0]
+    //      },
+    //      { data: data2,
+    //        label: labels[1],
+    //        color: colors[1]
+    //      }
+    //    ],
+    //    {
+    //        series: {
+    //           lines: {
+    //          show: true,
+    //          fill: true,
+    //          lineWidth: 1,
+    //          fillColor: {
+    //            colors: [ { opacity: 0.0 },
+    //                      { opacity: 0.7 }
+    //                    ]
+    //          }
+    //        },
+    //        points: {
+    //          show: true
+    //        },
+    //        shadowSize: 0
+    //        },
+    //        legend: {
+    //        position: 'nw'
+    //      },
+    //      grid: {
+    //        hoverable: true,
+    //        clickable: true,
+    //        borderColor: borderColor,
+    //        borderWidth: 0,
+    //        labelMargin: 10,
+    //        backgroundColor: bgColor
+    //      },
+    //      yaxis: {
+    //        min: 0,
+    //        max: 15,
+    //        color: 'rgba(0,0,0,0)'
+    //      },
+    //      xaxis: {
+    //        color: 'rgba(0,0,0,0)'
+    //      },
+    //      tooltip: true,
+    //      tooltipOpts: {
+    //          content: '%s: Value of %x is %y',
+    //          shifts: {
+    //              x: -60,
+    //              y: 25
+    //          },
+    //          defaultTheme: false
+    //      }
+    //  });
     },
     //end plot graph
 
@@ -115,7 +115,7 @@
             }
         };
 
-        $.plot($(selector), data, options);
+        //$.plot($(selector), data, options);
     },
 
     

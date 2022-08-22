@@ -11,7 +11,7 @@ namespace ShopManagement.Application.Contracts.ProductCategoryContract
     {
         OperationResult Create(CreateProductCategory command);
         OperationResult Edit(EditProductCategory command);
-        EditProductCategory GetDetail(long Id);
+        EditProductCategory GetDetail(int Id);
         List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel);
     }
 }

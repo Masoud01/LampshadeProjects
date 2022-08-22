@@ -4,9 +4,9 @@ using System.Linq.Expressions;
 
 namespace ShopManagement.Domain.ProductCategoryAgg
 {
-    public interface IProductCategoryRepository:IRepository<long,ProductCategory>
+    public interface IProductCategoryRepository:IRepository<int,ProductCategory>
     {
-        EditProductCategory GetDetail(long Id);
+        EditProductCategory GetDetail(int Id);
         List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel);
 
     }

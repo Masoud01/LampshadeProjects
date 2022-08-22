@@ -13,7 +13,7 @@ SinglePage.LoadModal = function () {
             const container = document.getElementById("ModalContent");
             const forms = container.getElementsByTagName("form");
             const newForm = forms[forms.length - 1];
-            //$.validator.unobtrusive.parse(newForm);
+            $.validator.unobtrusive.parse(newForm);
             showModal();
         }).fail(function (error) {
             alert("خطایی رخ داده، لطفا با مدیر سیستم تماس بگیرید.");
@@ -184,27 +184,27 @@ function handleAjaxCall(method, url, data) {
     }
 }
 
-// jQuery.validator.addMethod("maxFileSize",
-//     function (value, element, params) {
-//         var size = element.files[0].size;
-//         var maxSize = 3 * 1024 * 1024;
-//         if (size > maxSize)
-//             return false;
-//         else {
-//             return true;
-//         }
-//     });
-// jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
+ jQuery.validator.addMethod("maxFileSize",
+     function (value, element, params) {
+         var size = element.files[0].size;
+         var maxSize = 3 * 1024 * 1024;
+         if (size > maxSize)
+             return false;
+         else {
+             return true;
+         }
+     });
+ jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
 
-//jQuery.validator.addMethod("maxFileSize",
-//    function (value, element, params) {
-//        var size = element.files[0].size;
-//        var maxSize = 3 * 1024 * 1024;
-//        debugger;
-//        if (size > maxSize)
-//            return false;
-//        else {
-//            return true;
-//        }
-//    });
-//jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");
+jQuery.validator.addMethod("maxFileSize",
+    function (value, element, params) {
+        var size = element.files[0].size;
+        var maxSize = 3 * 1024 * 1024;
+        debugger;
+        if (size > maxSize)
+            return false;
+        else {
+            return true;
+        }
+    });
+jQuery.validator.unobtrusive.adapters.addBool("maxFileSize");

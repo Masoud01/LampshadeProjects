@@ -217,7 +217,7 @@ function($) {
     
      //on doc load
     MoltranApp.prototype.onDocReady = function(e) {
-      FastClick.attach(document.body);
+    //  FastClick.attach(document.body);
       // resizefunc.push("initscrolls");
       // resizefunc.push("changeptype");
 
@@ -226,7 +226,7 @@ function($) {
       });
     
       //RUN RESIZE ITEMS
-      $(window).resize(debounce(resizeitems,100));
+     // $(window).resize(debounce(resizeitems,100));
       $("body").trigger("resize");
 
       // right side-bar toggle
@@ -328,13 +328,13 @@ var debounce = function(func, wait, immediate) {
   };
 }
 
-function resizeitems(){
-  if($.isArray(resizefunc)){  
-    for (i = 0; i < resizefunc.length; i++) {
-        window[resizefunc[i]]();
-    }
-  }
-}
+//function resizeitems(){
+//  if($.isArray(resizefunc)){  
+//    for (i = 0; i < resizefunc.length; i++) {
+//        window[resizefunc[i]]();
+//    }
+//  }
+//}
 
 function initscrolls(){
     if(jQuery.browser.mobile !== true){

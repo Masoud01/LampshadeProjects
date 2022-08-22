@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace ShopManagement.Infrastructure.EFCore.Repository
 {
-    public class ProductCategoryRepository : RepositoryBase<long, ProductCategory>, IProductCategoryRepository
+    public class ProductCategoryRepository : RepositoryBase<int, ProductCategory>, IProductCategoryRepository
     {
         private readonly ShopContext _context;
         public ProductCategoryRepository(ShopContext context) : base(context)
@@ -14,18 +14,18 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             _context = context;
         }
 
-        public EditProductCategory GetDetail(long Id)
+        public EditProductCategory GetDetail(int Id)
         {
             return _context.ProductCategories.Select(x => new EditProductCategory()
             {
                 Id = x.Id,
-                Description = x.Description,
-                MetaDescription = x.MetaDescription,
-                MetaKeyword = x.MetaKeyword,
                 Name = x.Name,
+                Description = x.Description,
                 Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
+                MetaKeyword = x.MetaKeyword,
+                MetaDescription = x.MetaDescription,
                 Slug = x.Slug
             }).FirstOrDefault(x => x.Id == Id);
         }

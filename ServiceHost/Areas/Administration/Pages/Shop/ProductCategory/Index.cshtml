@@ -50,7 +50,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach(var item in Model.productCategories)
+                                @foreach (var item in Model.productCategories)
                                 {
                                     <tr>
                                         <td>@item.Id</td>
@@ -58,12 +58,15 @@
                                         <td>@item.Name</td>
                                         <td>@item.CreateDate</td>
                                         <td>
-                                            <button class="btn btn-success">ویرایش</button>
+                                            <a href="#showmodal=@Url.Page("./Index","Edit",new{Id=item.Id})"
+                                           class="btn btn-success">
+                                                ویرایش
+                                            </a>
                                             <button class="btn btn-danger">حذف</button>
-                                            </td>
+                                        </td>
                                     </tr>
                                 }
-                                
+
                             </tbody>
                         </table>
                     </div>

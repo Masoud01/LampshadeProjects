@@ -43,16 +43,16 @@ namespace ShopManagement.Application
                 return operation.Failed("رکورد با اطلاعات درخواست شده یافت نشد لطفا مجداد تلاش کنید");
             }
             var slug = command.Slug.Slugify();
-            productCategory.Edit(
-                command.Name, command.Description,
-                command.Picture, command.Picture,
+            productCategory.Edit
+                (command.Name, command.Description,
+                command.Picture, command.PictureAlt,
                 command.PictureTitle, command.MetaKeyword,
                 command.MetaDescription, slug);
             _productCategoryRepository.SaveChanges();
             return operation.Succesdead();
         }
 
-        EditProductCategory IProductCategoryApplication.GetDetail(long Id)
+        EditProductCategory IProductCategoryApplication.GetDetail(int Id)
         {
             return _productCategoryRepository.GetDetail(Id);
         }

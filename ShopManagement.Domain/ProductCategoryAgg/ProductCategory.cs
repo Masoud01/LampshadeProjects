@@ -45,6 +45,9 @@ namespace ShopManagement.Domain.ProductCategoryAgg
             Picture = picture;
             PictureAlt = pictureAlt;
             PictureTitle = pictureTitle;
+            MetaKeyword = metaKeyword;
+            MetaDescription = metaDescription;
+            Slug = slug;
         }
     }
 }

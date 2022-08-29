@@ -11,13 +11,19 @@ namespace ShopManagement.Application
         {
             _productCategoryRepository = productCategoryRepository;
         }
+
+        public List<ProductCategoryViewModel> ProductCategories()
+        {
+            return _productCategoryRepository.GetProductCategories();
+        }
+
         OperationResult IProductCategoryApplication.Create(CreateProductCategory command)
         {
             var operation = new OperationResult();
             //چک کنیم که با این نام وجود داره یا خیر اگه وجود دااشت خطا بده که وجود داره
             if (_productCategoryRepository.Exist(x => x.Name.Equals(command.Name)))
             {
-                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد لطفا مجداد تلاش کنید");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
             var slug = command.Slug.Slugify();
             var productCatecory = new ProductCategory(
@@ -36,11 +42,11 @@ namespace ShopManagement.Application
             var productCategory = _productCategoryRepository.Get(command.Id);
             if (productCategory == null)
             {
-                return operation.Failed("رکورد با اطلاعات درخواست شده یافت نشد لطفا مجداد تلاش کنید");
+                return operation.Failed(ApplicationMessages.RecordNotFound);
             }
             if (_productCategoryRepository.Exist(x => x.Name.Equals(command.Name) && x.Id.Equals(command.Id)))
             {
-                return operation.Failed("رکورد با اطلاعات درخواست شده یافت نشد لطفا مجداد تلاش کنید");
+                return operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
             var slug = command.Slug.Slugify();
             productCategory.Edit

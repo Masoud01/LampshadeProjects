@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ShopManagement.Infrastructure.EFCore/1.0.0": {
         "dependencies": {
+          "0_Framework": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.8",

@@ -304,9 +304,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj": {
-                "projectPath": "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj"
-              },
               "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Application\\ShopManagement.Application.csproj": {
                 "projectPath": "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Application\\ShopManagement.Application.csproj"
               },
@@ -455,6 +452,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\0_Framework\\0_Framework.csproj": {
+                "projectPath": "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\0_Framework\\0_Framework.csproj"
+              },
               "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
                 "projectPath": "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }

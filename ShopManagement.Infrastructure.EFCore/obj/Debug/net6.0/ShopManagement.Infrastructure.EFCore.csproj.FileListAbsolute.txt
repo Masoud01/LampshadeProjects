@@ -5,8 +5,8 @@ D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Infrastructure
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Infrastructure.EFCore\bin\Debug\net6.0\0_Framework.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Infrastructure.EFCore\bin\Debug\net6.0\ShopManagement.Application.Contracts.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Infrastructure.EFCore\bin\Debug\net6.0\ShopManagement.Domain.dll
-D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Infrastructure.EFCore\bin\Debug\net6.0\ShopManagement.Domain.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Infrastructure.EFCore\bin\Debug\net6.0\0_Framework.pdb
+D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Infrastructure.EFCore\bin\Debug\net6.0\ShopManagement.Domain.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Infrastructure.EFCore\bin\Debug\net6.0\ShopManagement.Application.Contracts.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Infrastructure.EFCore\obj\Debug\net6.0\ShopManagement.Infrastructure.EFCore.csproj.AssemblyReference.cache
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Infrastructure.EFCore\obj\Debug\net6.0\ShopManagement.Infrastructure.EFCore.GeneratedMSBuildEditorConfig.editorconfig

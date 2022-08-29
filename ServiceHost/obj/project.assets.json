@@ -3185,7 +3185,6 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.8",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
           "ShopManagement.Application": "1.0.0",
-          "ShopManagement.Application.Contracts": "1.0.0",
           "ShopManagement.Infrastructure.EFCore": "1.0.0"
         },
         "compile": {
@@ -3213,6 +3212,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "0_Framework": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
           "ShopManagement.Domain": "1.0.0"

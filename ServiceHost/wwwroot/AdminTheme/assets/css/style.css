@@ -73,6 +73,7 @@ body {
 }
 * {
   font-size: 14px !important;
+  box-sizing:border-box
 }
 h1,
 h2,

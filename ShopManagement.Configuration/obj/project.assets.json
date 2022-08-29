@@ -693,6 +693,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "0_Framework": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
           "ShopManagement.Domain": "1.0.0"
@@ -1958,7 +1959,6 @@
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.8",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 6.0.0",
       "ShopManagement.Application >= 1.0.0",
-      "ShopManagement.Application.Contracts >= 1.0.0",
       "ShopManagement.Infrastructure.EFCore >= 1.0.0"
     ]
   },
@@ -1994,9 +1994,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj": {
-              "projectPath": "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Application.Contracts\\ShopManagement.Application.Contracts.csproj"
-            },
             "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Application\\ShopManagement.Application.csproj": {
               "projectPath": "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Application\\ShopManagement.Application.csproj"
             },

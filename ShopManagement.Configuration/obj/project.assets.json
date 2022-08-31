@@ -648,6 +648,19 @@
           "bin/placeholder/0_Framework.dll": {}
         }
       },
+      "LampshadeQuery/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ShopManagement.Infrastructure.EFCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LampshadeQuery.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LampshadeQuery.dll": {}
+        }
+      },
       "ShopManagement.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1931,6 +1944,11 @@
       "path": "../0_Framework/0_Framework.csproj",
       "msbuildProject": "../0_Framework/0_Framework.csproj"
     },
+    "LampshadeQuery/1.0.0": {
+      "type": "project",
+      "path": "../LampshadeQuery/LampshadeQuery.csproj",
+      "msbuildProject": "../LampshadeQuery/LampshadeQuery.csproj"
+    },
     "ShopManagement.Application/1.0.0": {
       "type": "project",
       "path": "../ShopManagement.Application/ShopManagement.Application.csproj",
@@ -1954,6 +1972,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "LampshadeQuery >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.8",
@@ -1994,6 +2013,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\LampshadeQuery\\LampshadeQuery.csproj": {
+              "projectPath": "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\LampshadeQuery\\LampshadeQuery.csproj"
+            },
             "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Application\\ShopManagement.Application.csproj": {
               "projectPath": "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Application\\ShopManagement.Application.csproj"
             },

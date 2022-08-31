@@ -3,10 +3,12 @@ D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\ShopManagement.Configuration.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\ShopManagement.Configuration.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\0_Framework.dll
+D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\LampshadeQuery.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\ShopManagement.Application.Contracts.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\ShopManagement.Application.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\ShopManagement.Domain.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\ShopManagement.Infrastructure.EFCore.dll
+D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\LampshadeQuery.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\ShopManagement.Application.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\ShopManagement.Infrastructure.EFCore.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ShopManagement.Configuration\bin\Debug\net6.0\0_Framework.pdb

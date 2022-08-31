@@ -22,7 +22,7 @@ namespace ShopManagement.Application
                 command.Picture, command.PictureAlt,
                 command.PictureTitle, command.Heading,
                 command.Title, command.Text,
-                command.BtnText);
+                command.BtnText,command.Link);
             _slideRepositroy.Create(slider);
             _slideRepositroy.SaveChanges();
             return operation.Succesdead();
@@ -43,7 +43,7 @@ namespace ShopManagement.Application
             slide.Edit(
                 command.Picture, command.PictureAlt,
                 command.PictureTitle, command.Heading,
-                command.Title, command.Text, command.BtnText);
+                command.Title, command.Text, command.BtnText,command.Link);
             _slideRepositroy.SaveChanges();
             return operation.Succesdead();
         }

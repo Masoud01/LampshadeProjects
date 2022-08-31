@@ -21,7 +21,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Heading=x.Heading,
                 Title=x.Title,
                 Text=x.Text,
-                BtnText=x.BtnText
+                BtnText=x.BtnText,
+                Link = x.Link
             }).SingleOrDefault(x => x.Id.Equals(id));
         }
 

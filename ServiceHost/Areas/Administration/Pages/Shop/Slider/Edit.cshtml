@@ -37,33 +37,43 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label asp-for="Heading" class="control-label">سر تیتر</label>
-                    <input type="text" class="form-control" asp-for="Heading">
-                    <span asp-validation-for="Heading" class="error"></span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label asp-for="Title" class="control-label">عنوان</label>
-                    <input asp-for="Title" type="text" class="form-control">
-                    <span asp-validation-for="Title" class="error"></span>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label asp-for="BtnText" class="control-label">متن دکمه</label>
-                    <input asp-for="BtnText" type="text" class="form-control">
-                    <span asp-validation-for="BtnText" class="error"></span>
-                </div>
-            </div>
-            <input type="hidden" asp-for="Id" value="@Model.Id"/>
-        </div>
+       <div class="row">
+           <div class="col-md-6">
+               <div class="form-group">
+                   <label asp-for="Heading" class="control-label">سر تیتر</label>
+                   <input type="text" class="form-control" asp-for="Heading">
+                   <span asp-validation-for="Heading" class="error"></span>
+               </div>
+           </div>
+           <div class="col-md-6">
+               <div class="form-group">
+                   <label asp-for="Title" class="control-label">عنوان</label>
+                   <input asp-for="Title" type="text" class="form-control">
+                   <span asp-validation-for="Title" class="error"></span>
+               </div>
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="col-md-6">
+               <div class="form-group">
+                   <label asp-for="BtnText" class="control-label">متن دکمه</label>
+                   <input asp-for="BtnText" type="text" class="form-control">
+                   <span asp-validation-for="BtnText" class="error"></span>
+               </div>
+           </div>
+           <div class="col-md-6">
+               <div class="form-group">
+                   <label asp-for="Link" class="control-label">لینک اسلاید</label>
+                   <input asp-for="Link" type="text" class="form-control">
+                   <span asp-validation-for="Link" class="error"></span>
+               </div>
+           </div>
+           <input type="hidden" value="@Model.Id" asp-for="Id"/>
+       </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">بستن</button>
-        <button type="submit" class="btn btn-info waves-effect waves-light">ایجاد</button>
+        <button type="submit" class="btn btn-info waves-effect waves-light">ویرایش</button>
     </div>
 </form>

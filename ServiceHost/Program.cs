@@ -1,4 +1,5 @@
 
+using DiscountManagement.Configuration;
 using ShopManagement.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,7 @@ var connectionString = builder.Configuration.GetConnectionString("LampshadeDB");
 builder.Services.AddRazorPages();
 //Services Project
 ShopManagementBootstrapper.Configure(builder.Services, connectionString);
-
+DiscountManagementBootstrapper.Configuration(builder.Services,connectionString);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

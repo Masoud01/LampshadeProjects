@@ -1,4 +1,5 @@
-﻿using LampshadeQuery.Contract.Slides;
+﻿using LampshadeQuery.Contract.ProductCategory;
+using LampshadeQuery.Contract.Slides;
 using LampshadeQuery.Query;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,6 +34,7 @@ namespace ShopManagement.Configuration
             services.AddTransient<ISlideRepositroy, SliderRepository>();
             //LampShadeQuery
             services.AddTransient<ISlideQuery, SlideQuery>();
+            services.AddTransient<IProductCategoryQueryModel,ProductCategoryQuery>();
             //ConnectionString
             services.AddDbContext<ShopContext>(x=>x.UseSqlServer(connectionString));
         }

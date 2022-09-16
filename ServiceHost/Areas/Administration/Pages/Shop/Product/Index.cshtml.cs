@@ -9,12 +9,12 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Product
     public class IndexModel : PageModel
     {
         [TempData]
-        public string Mesagee { get; set; }
-        public List<ProductViewModel> productViewModels;
-        public ProductSearchModel SearchModel;
+        public string? Mesagee { get; set; }
+        public List<ProductViewModel>? productViewModels;
+        public ProductSearchModel? SearchModel;
         private readonly IProductApplication _productApplication;
         private readonly IProductCategoryApplication _productCategoryApplication;
-        public SelectList ProductCateories;
+        public SelectList? ProductCateories;
         public IndexModel(IProductApplication productApplication, IProductCategoryApplication productCategoryApplication)
         {
             _productApplication = productApplication;
@@ -29,8 +29,10 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Product
         }
         public IActionResult OnGetCreate()
         {
-            var command = new CreateProduct();
-            command.categoryViewModels = _productCategoryApplication.ProductCategories();
+            var command = new CreateProduct
+            {
+                categoryViewModels = _productCategoryApplication.ProductCategories()
+            };
             return Partial("./Create", command);
         }
         public JsonResult OnPostCreate(CreateProduct command)
@@ -47,7 +49,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Product
         public JsonResult OnPostEdit(EditProduct command)
         {
             var result = _productApplication.Edit(command);
-            return new JsonResult(command);
+            return new JsonResult(result);
         }
         public IActionResult OnGetNotInStuck(int Id)
         {

@@ -9,10 +9,10 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductPicture
     public class IndexModel : PageModel
     {
         [TempData]
-        public string Mesagee { get; set; }
-        public List<ProductPictureViewModel> productViewModels;
-        public ProductPictureViewModel SearchModel;
-        public SelectList Products;
+        public string? Mesagee { get; set; }
+        public List<ProductPictureViewModel>? productViewModels;
+        public ProductPictureViewModel? SearchModel;
+        public SelectList? Products;
         private readonly IProductApplication _productApplication;
         private readonly IProductPictureApplication _productPictureApplication;
         public IndexModel(IProductPictureApplication productPictureApplication,IProductApplication productApplication)
@@ -48,7 +48,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductPicture
         public JsonResult OnPostEdit(EditProductPicture command)
         {
             var result = _productPictureApplication.Edit(command);
-            return new JsonResult(command);
+            return new JsonResult(result);
         }
         public IActionResult OnGetRemove(int Id)
         {

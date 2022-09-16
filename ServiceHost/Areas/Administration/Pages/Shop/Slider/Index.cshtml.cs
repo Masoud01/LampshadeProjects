@@ -11,8 +11,8 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slider
     public class IndexModel : PageModel
     {
         [TempData]
-        public string Mesagee { get; set; }
-        public List<SlideVIewModel> SlideVIewModels;
+        public string? Mesagee { get; set; }
+        public List<SlideVIewModel>? SlideVIewModels;
         private readonly ISLideApplication _sLideApplication;
         public IndexModel(ISLideApplication sLideApplication)
         {
@@ -42,7 +42,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slider
         public JsonResult OnPostEdit(EditSlide command)
         {
             var result = _sLideApplication.Edit(command);
-            return new JsonResult(command);
+            return new JsonResult(result);
         }
         public IActionResult OnGetRemove(int Id)
         {

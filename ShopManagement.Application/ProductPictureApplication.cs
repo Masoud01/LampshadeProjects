@@ -21,7 +21,7 @@ namespace ShopManagement.Application
             var data = new ProductPicture(command.ProductId, command.Picture, command.PictureAlt, command.PictureTitle);
             _productPictureRepository.Create(data);
             _productPictureRepository.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
 
         public EditProductPicture Detail(int Id)
@@ -46,7 +46,7 @@ namespace ShopManagement.Application
             }
             productPicture.Edit(command.ProductId, command.Picture, command.PictureAlt, command.PictureTitle);
             _productPictureRepository.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
 
         public OperationResult Remove(int Id)
@@ -59,7 +59,7 @@ namespace ShopManagement.Application
             }
             productPicture.Remove();
             _productPictureRepository.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
 
         public OperationResult Restore(int Id)
@@ -72,7 +72,7 @@ namespace ShopManagement.Application
             }
             productPicture.Restore();
             _productPictureRepository.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
 
         public List<ProductPictureViewModel> Search(ProductPictureSearchModel searchModel)

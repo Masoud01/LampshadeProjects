@@ -10,14 +10,14 @@ namespace ServiceHost.Areas.Administration.Pages.Discount.Customer
     public class IndexModel : PageModel
     {
         [TempData]
-        public string? Mesagee { get; set; }
-        public List<CustomerDiscountViewModel>? CustomerDiscountView;
-        public CustomerDiscountSearchModel? SearchModel;
+        public string Mesagee { get; set; }
+        public List<CustomerDiscountViewModel> CustomerDiscountView;
+        public CustomerDiscountSearchModel SearchModel;
 
-        public SelectList? Product;
+        public SelectList Product;
         private readonly ICustomerDiscountApplication _customerDiscountApplication;
         private readonly IProductApplication _productApplication;
-        public IndexModel(ICustomerDiscountApplication customerDiscountApplication,IProductApplication productApplication)
+        public IndexModel(ICustomerDiscountApplication customerDiscountApplication, IProductApplication productApplication)
         {
             _customerDiscountApplication = customerDiscountApplication;
             _productApplication = productApplication;
@@ -25,7 +25,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discount.Customer
         public void OnGet(CustomerDiscountSearchModel searchModel)
         {
             Product = new SelectList(_productApplication.GetProducts(), "Id", "Name");
-           CustomerDiscountView = _customerDiscountApplication.Search(searchModel);
+            CustomerDiscountView = _customerDiscountApplication.Search(searchModel);
         }
         public IActionResult OnGetCreate()
         {
@@ -51,6 +51,6 @@ namespace ServiceHost.Areas.Administration.Pages.Discount.Customer
             var result = _customerDiscountApplication.Edit(command);
             return new JsonResult(result);
         }
-        
+
     }
 }

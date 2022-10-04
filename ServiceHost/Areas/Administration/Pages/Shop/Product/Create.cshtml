@@ -13,33 +13,27 @@
       enctype="multipart/form-data">
     <div class="modal-body">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="Name" class="control-label">نام</label>
                     <input type="text" class="form-control" asp-for="Name" onchange="makeSlug('Name', 'Slug')">
                     <span asp-validation-for="Name" class="error"></span>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label asp-for="Code" class="control-label">کد</label>
                     <input asp-for="Code" type="text" class="form-control">
                     <span asp-validation-for="Code" class="error"></span>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label asp-for="UnitPrice" class="control-label">قیمت محصول</label>
-                    <input asp-for="UnitPrice" type="text" class="form-control">
-                    <span asp-validation-for="UnitPrice" class="error"></span>
-                </div>
-            </div>
+
         </div>
         <div class="row">
             <div class="col-md-12">
                 <label asp-for="CategoryId" class="control-label">گروه محصول</label>
-                <select asp-for="CategoryId" class="form-control" asp-items='new SelectList(Model.categoryViewModels,"Id","Name")'>
-                    <option value="0">گروه محصول را انتخب کنید</option>
+                <select asp-for="CategoryId" class="form-control" asp-items='new SelectList(Model.CategoryViewModels,"Id","Name")'>
+                    <option value="0">گروه محصول را انتخاب کنید</option>
                 </select>
             </div>
         </div>

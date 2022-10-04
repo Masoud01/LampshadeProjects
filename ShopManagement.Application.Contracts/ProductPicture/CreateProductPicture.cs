@@ -13,6 +13,6 @@ namespace ShopManagement.Application.Contracts.ProductPicture
         public string? Picture { get;  set; }
         public string? PictureAlt { get;  set; }
         public string? PictureTitle { get;  set; }
-        public List<ProductViewModel> Products { get; set; }
+        public List<ProductViewModel>? Products { get; set; }
     }
 }

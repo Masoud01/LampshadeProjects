@@ -4,9 +4,11 @@ D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\b
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\bin\Debug\net6.0\0_Framework.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\bin\Debug\net6.0\DiscountManagement.Application.Contract.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\bin\Debug\net6.0\DiscountManagement.Domain.dll
+D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\bin\Debug\net6.0\ShopManagement.Application.Contracts.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\bin\Debug\net6.0\DiscountManagement.Application.Contract.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\bin\Debug\net6.0\DiscountManagement.Domain.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\bin\Debug\net6.0\0_Framework.pdb
+D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\bin\Debug\net6.0\ShopManagement.Application.Contracts.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\obj\Debug\net6.0\DiscountManagement.Application.csproj.AssemblyReference.cache
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\obj\Debug\net6.0\DiscountManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\obj\Debug\net6.0\DiscountManagement.Application.AssemblyInfoInputs.cache
@@ -17,5 +19,3 @@ D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\o
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\obj\Debug\net6.0\refint\DiscountManagement.Application.dll
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\obj\Debug\net6.0\DiscountManagement.Application.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\obj\Debug\net6.0\ref\DiscountManagement.Application.dll
-D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\bin\Debug\net6.0\ShopManagement.Application.Contracts.dll
-D:\Projects\Asp.Net Core.Projects\LampshadeProject\DiscountCustomerApplication\bin\Debug\net6.0\ShopManagement.Application.Contracts.pdb

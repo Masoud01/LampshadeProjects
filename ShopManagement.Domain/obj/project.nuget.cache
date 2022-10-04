@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0mgHLOFdI7HfKuhS2vvbmgHUwd7bCAwqRZw+7VQ11WrTxLciurC3DiUSc8vXtuCvHUhgYyWk/ZtRIGcYVpROmQ==",
+  "dgSpecHash": "RakXjYIua1yAo183DJmFWgV9UqunI74iATUBKrIL9TAHoKj6EXxPO7L3ZORMuivVXLPeMe+yaXuGfrw8EJ/jIQ==",
   "success": true,
   "projectFilePath": "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Domain\\ShopManagement.Domain.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\Masoud\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Masoud\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Masoud\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Masoud\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Masoud\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Masoud\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Masoud\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"

@@ -7,5 +7,5 @@ public class DefineColleagueDiscount
 {
     public int ProductId { get; set; }
     public int DiscountRate { get;  set; }
-    public List<ProductViewModel> Product { get; set; }
+    public List<ProductViewModel>? Product { get; set; }
 }

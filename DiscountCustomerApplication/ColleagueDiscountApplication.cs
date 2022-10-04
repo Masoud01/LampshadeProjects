@@ -24,7 +24,7 @@ public class ColleagueDiscountApplication : IColleagueDiscountApplication
         var discount = new ColleagueDiscount(command.ProductId, command.DiscountRate);
         _colleagueDiscountRepository.Create(discount);
         _colleagueDiscountRepository.SaveChanges();
-        return operation.Succesdead();
+        return operation.Succedded();
     }
 
     public OperationResult Edit(EditColleagueDiscount command)
@@ -45,7 +45,7 @@ public class ColleagueDiscountApplication : IColleagueDiscountApplication
 
         detail.Edit(command.ProductId, command.DiscountRate);
         _colleagueDiscountRepository.SaveChanges();
-        return operation.Succesdead();
+        return operation.Succedded();
     }
 
     public EditColleagueDiscount GetDetails(int Id)
@@ -69,7 +69,7 @@ public class ColleagueDiscountApplication : IColleagueDiscountApplication
 
         detail.IsActive();
         _colleagueDiscountRepository.SaveChanges();
-        return operation.Succesdead();
+        return operation.Succedded();
     }
 
     public OperationResult DeActive(int Id)
@@ -83,6 +83,6 @@ public class ColleagueDiscountApplication : IColleagueDiscountApplication
 
         detail.DeActive();
         _colleagueDiscountRepository.SaveChanges();
-        return operation.Succesdead();
+        return operation.Succedded();
     }
 }

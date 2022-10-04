@@ -9,10 +9,10 @@ namespace ShopManagement.Infrastructure.EFCore
 {
     public class ShopContext : DbContext
     {
-        public DbSet<ProductCategory> ProductCategories { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductPicture> ProductPictures { get; set; }
-        public DbSet <Slider> Slides { get; set; }
+        public DbSet<ProductCategory>? ProductCategories { get; set; }
+        public DbSet<Product>? Products { get; set; }
+        public DbSet<ProductPicture>? ProductPictures { get; set; }
+        public DbSet <Slider>? Slides { get; set; }
         public ShopContext(DbContextOptions<ShopContext> options) : base(options)
         {
 

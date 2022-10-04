@@ -9,10 +9,10 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductPicture
     public class IndexModel : PageModel
     {
         [TempData]
-        public string? Mesagee { get; set; }
-        public List<ProductPictureViewModel>? productViewModels;
-        public ProductPictureViewModel? SearchModel;
-        public SelectList? Products;
+        public string Mesagee { get; set; }
+        public List<ProductPictureViewModel> productViewModels;
+        public ProductPictureViewModel SearchModel;
+        public SelectList Products;
         private readonly IProductApplication _productApplication;
         private readonly IProductPictureApplication _productPictureApplication;
         public IndexModel(IProductPictureApplication productPictureApplication,IProductApplication productApplication)
@@ -53,7 +53,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductPicture
         public IActionResult OnGetRemove(int Id)
         {
             var result = _productPictureApplication.Remove(Id);
-            if (result.IsSuccedead)
+            if (result.IsSuccedded)
             {
                 return RedirectToPage("./Index");
             }
@@ -63,7 +63,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductPicture
         public IActionResult OnGeRestore(int Id)
         {
             var result = _productPictureApplication.Restore(Id);
-            if (result.IsSuccedead)
+            if (result.IsSuccedded)
             {
                 return RedirectToPage("./Index");
             }

@@ -18,7 +18,7 @@ namespace LampshadeQuery.Query
         }
         public List<SlideQueryModel> GetSlides()
         {
-            var query = _context.Slides.Where(x => x.IsRemoved.Equals(false))
+            var query = _context!.Slides?.Where(x => x.IsRemoved.Equals(false))
                 .Select(x => new SlideQueryModel()
                 {
                     Picture = x.Picture,
@@ -30,7 +30,7 @@ namespace LampshadeQuery.Query
                     Text = x.Text,
                     Link = x.Link
                 });
-            return query.ToList();
+            return query!.ToList();
         }
     }
 }

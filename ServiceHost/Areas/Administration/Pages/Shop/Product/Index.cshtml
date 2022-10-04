@@ -7,7 +7,7 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-left">
-            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index","Create")">ایجاد  محصول جدید</a>
+            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index","Create")">ایجاد محصول جدید</a>
         </p>
     </div>
 </div>
@@ -30,7 +30,8 @@
                     </div>
                     <div class="form-group">
                         <label class="sr-only" asp-for="SearchModel.CategoryId"></label>
-                        <select class="form-control" asp-for="SearchModel.CategoryId" asp-items="Model.ProductCateories">
+                        <select class="form-control" asp-for="SearchModel.CategoryId"
+                            asp-items="Model.ProductCateories">
                             <option value="0">محصول را انتخاب کنید</option>
                         </select>
                     </div>
@@ -58,9 +59,7 @@
                                     <th>نام</th>
                                     <th>کد</th>
                                     <th>گروه محصول</th>
-                                    <th>قیمت</th>
                                     <th>تاریخ تولید</th>
-                                    <th>موجود در انبار</th>
                                     <th>عملیات</th>
                                 </tr>
                             </thead>
@@ -84,38 +83,13 @@
                                             @item.CategpryName
                                         </td>
                                         <td>
-                                            @item.UnitPrice
-                                        </td>
-                                        <td>@item.CreateDate</td>
-                                        <td>
-                                            @if (item.InStuck)
-                                            {
-                                                <i class="fa fa-check text-success"></i>
-                                            }
-                                            else
-                                            {
-                                                <i class="fa fa-remove text-danger"></i>
-                                            }
+                                            @item.CreateDate
                                         </td>
                                         <td style>
                                             <a href="#showmodal=@Url.Page("./Index","Edit",new{Id=item.Id})"
-                                           class="btn btn-purple btn-custom waves-effect waves-light m-b-5">
+                                            class="btn btn-purple btn-custom waves-effect waves-light m-b-5">
                                                 ویرایش
                                             </a>
-                                            @if (item.InStuck)
-                                            {
-                                                <a asp-page="./Index"
-                                           asp-page-handler="NotInStuck"
-                                           asp-route-Id="@item.Id"
-                                           class="btn btn-danger btn-custom waves-effect waves-light px-3">اتمام موجودی</a>
-                                            }
-                                            else
-                                            {
-                                                <a asp-page="./Index"
-                                           asp-page-handler="IsInStuck"
-                                           asp-route-Id="@item.Id"
-                                           class="btn btn-success btn-custom waves-effect waves-light px-3">موجود در انبار</a>
-                                            }
 
                                         </td>
                                     </tr>

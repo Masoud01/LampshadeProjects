@@ -9,12 +9,12 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Product
     public class IndexModel : PageModel
     {
         [TempData]
-        public string? Mesagee { get; set; }
-        public List<ProductViewModel>? productViewModels;
-        public ProductSearchModel? SearchModel;
+        public string Mesagee { get; set; }
+        public List<ProductViewModel> productViewModels;
+        public ProductSearchModel SearchModel;
         private readonly IProductApplication _productApplication;
         private readonly IProductCategoryApplication _productCategoryApplication;
-        public SelectList? ProductCateories;
+        public SelectList ProductCateories;
         public IndexModel(IProductApplication productApplication, IProductCategoryApplication productCategoryApplication)
         {
             _productApplication = productApplication;
@@ -31,7 +31,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Product
         {
             var command = new CreateProduct
             {
-                categoryViewModels = _productCategoryApplication.ProductCategories()
+                CategoryViewModels = _productCategoryApplication.ProductCategories()
             };
             return Partial("./Create", command);
         }
@@ -43,7 +43,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Product
         public IActionResult OnGetEdit(int Id)
         {
             var product = _productApplication.GetDetial(Id);
-            product.categoryViewModels = _productCategoryApplication.ProductCategories();
+            product.CategoryViewModels = _productCategoryApplication.ProductCategories();
             return Partial("./Edit", product);
         }
         public JsonResult OnPostEdit(EditProduct command)
@@ -51,25 +51,6 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Product
             var result = _productApplication.Edit(command);
             return new JsonResult(result);
         }
-        public IActionResult OnGetNotInStuck(int Id)
-        {
-            var result=_productApplication.NotInStuck(Id);
-            if (result.IsSuccedead)
-            {
-                return RedirectToPage("./Index");
-            }
-            Mesagee = result.Message;
-            return RedirectToPage("./Index");
-        }
-        public IActionResult OnGeIsInStuck(int Id)
-        {
-            var result=_productApplication.InStuck(Id);
-            if (result.IsSuccedead)
-            {
-                return RedirectToPage("./Index");
-            }
-            Mesagee = result.Message;
-            return RedirectToPage("./Index");
-        }
+     
     }
 }

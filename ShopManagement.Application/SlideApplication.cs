@@ -14,7 +14,7 @@ namespace ShopManagement.Application
         public OperationResult Create(CreateSlide command)
         {
             var operation = new OperationResult();
-            if (_slideRepositroy.Exist(x => x.Picture.Equals(command.Picture)))
+            if (_slideRepositroy.Exist(x => x.Picture != null && x.Picture.Equals(command.Picture)))
             {
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
@@ -25,7 +25,7 @@ namespace ShopManagement.Application
                 command.BtnText,command.Link);
             _slideRepositroy.Create(slider);
             _slideRepositroy.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
 
         public OperationResult Edit(EditSlide command)
@@ -36,7 +36,7 @@ namespace ShopManagement.Application
             {
                 return operation.Failed(ApplicationMessages.RecordNotFound);
             }
-            if(_slideRepositroy.Exist(x=>x.Picture.Equals(command.Picture) && x.Id != command.Id))
+            if(_slideRepositroy.Exist(x=>x.Picture != null && x.Picture.Equals(command.Picture) && x.Id != command.Id))
             {
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
@@ -45,7 +45,7 @@ namespace ShopManagement.Application
                 command.PictureTitle, command.Heading,
                 command.Title, command.Text, command.BtnText,command.Link);
             _slideRepositroy.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
 
         public EditSlide GetDetail(int id)
@@ -68,7 +68,7 @@ namespace ShopManagement.Application
             }
             slide.Remove();
             _slideRepositroy.SaveChanges();
-           return operation.Succesdead();
+           return operation.Succedded();
         }
 
         public OperationResult Restore(int id)
@@ -81,7 +81,7 @@ namespace ShopManagement.Application
             }
             slide.Restore();
             _slideRepositroy.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1sRgzKaYhKR+JU2D5Am0ZzpsRunR/y9RVGSG916LiDC2GVtzRRj04l+KM5PrqK720f5ZVfwgACfJDbtjxD5Sxg==",
+  "dgSpecHash": "PuTP2inb+VwW53a/mb3Iuz55qMRtCGGt+3peFj1h9n0HiRYTNqx25ELzlIYbJtg9pQ5/weej3KW7FJrFGTwHMg==",
   "success": true,
   "projectFilePath": "D:\\Projects\\Asp.Net Core.Projects\\LampshadeProject\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\Masoud\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Masoud\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Masoud\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Masoud\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Masoud\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Masoud\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Masoud\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

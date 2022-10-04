@@ -9,11 +9,11 @@ namespace ServiceHost.Areas.Administration.Pages.Discount.Colleague
     public class IndexModel : PageModel
     {
         [TempData]
-        public string? Mesagee { get; set; }
-        public List<ColleagueDiscountViewModel>? ColleagueDiscount;
-        public ColleagueDiscountSearchModel? SearchModel;
+        public string Mesagee { get; set; }
+        public List<ColleagueDiscountViewModel> ColleagueDiscount;
+        public ColleagueDiscountSearchModel SearchModel;
 
-        public SelectList? Product;
+        public SelectList Product;
         private readonly IColleagueDiscountApplication _colleagueDiscountApplication;
         private readonly IProductApplication _productApplication;
         public IndexModel(IColleagueDiscountApplication colleagueDiscountApplication,IProductApplication productApplication)
@@ -54,7 +54,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discount.Colleague
         public IActionResult OnGetNotActive(int Id)
         {
             var result = _colleagueDiscountApplication.DeActive(Id);
-            if (result.IsSuccedead)
+            if (result.IsSuccedded)
             {
                 return RedirectToPage("./Index");
             }
@@ -64,7 +64,7 @@ namespace ServiceHost.Areas.Administration.Pages.Discount.Colleague
         public IActionResult OnGeActive(int Id)
         {
             var result = _colleagueDiscountApplication.Active(Id);
-            if (result.IsSuccedead)
+            if (result.IsSuccedded)
             {
                 return RedirectToPage("./Index");
             }

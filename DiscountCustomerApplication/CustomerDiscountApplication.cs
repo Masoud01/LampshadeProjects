@@ -16,14 +16,14 @@ namespace DiscountManagement.Application
         public OperationResult Define(DefineCustomerDiscount command)
         {
             var operation = new OperationResult();
-            var startDate = command.StartDate.ToGeorgianDateTime();
-            var endTime = command.EndDate.ToGeorgianDateTime();
+            var startDate = command.StartDate!.ToGeorgianDateTime();
+            var endTime = command.EndDate!.ToGeorgianDateTime();
             var discount = new CustomerDiscount(
                 command.ProductId, command.DiscountRate,
                 startDate,endTime, command.Reason);
             _customerDiscountRepository.Create(discount);
             _customerDiscountRepository.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
 
         public OperationResult Edit(EditCustomerDiscount command)
@@ -39,13 +39,13 @@ namespace DiscountManagement.Application
             {
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
-            var startDate = command.StartDate.ToGeorgianDateTime();
-            var endTime = command.EndDate.ToGeorgianDateTime();
+            var startDate = command.StartDate!.ToGeorgianDateTime();
+            var endTime = command.EndDate!.ToGeorgianDateTime();
             customerDiscount.Edit(command.ProductId,command.DiscountRate,
                 startDate,endTime,command.Reason
                 );
             _customerDiscountRepository.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
 
         public EditCustomerDiscount GetDetails(int id)

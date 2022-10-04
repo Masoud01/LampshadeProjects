@@ -13,7 +13,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
         }
         public EditSlide GetDetail(int id)
         {
-            return _context.Slides.Select(x => new EditSlide()
+            return _context!.Slides?.Select(x => new EditSlide()
             {
                 Id = id,
                 Picture=x.Picture,
@@ -29,7 +29,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
 
         public List<SlideVIewModel> GetList()
         {
-            return _context.Slides.Select(x => new SlideVIewModel()
+            return _context!.Slides?.Select(x => new SlideVIewModel()
             {
                 Id = x.Id,
                 Title = x.Title,

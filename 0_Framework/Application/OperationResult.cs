@@ -9,21 +9,21 @@ namespace _0_Framework.Application
     public class OperationResult
     {
         public string Message { get;  set; }
-        public bool IsSuccedead { get; set; }
+        public bool IsSuccedded { get; set; }
         public OperationResult()
         {
-            IsSuccedead = false;
+            IsSuccedded = false;
             Message = "";
         }
-        public OperationResult Succesdead(string message = "عملیات با موفقیت انجام شد")
+        public OperationResult Succedded(string message = "عملیات با موفقیت انجام شد")
         {
-            IsSuccedead = true;
+            IsSuccedded = true;
             Message = message;
             return this;
         }
         public OperationResult Failed(string message)
         {
-            IsSuccedead = false;
+            IsSuccedded = false;
             Message = message;
             return this;
         }

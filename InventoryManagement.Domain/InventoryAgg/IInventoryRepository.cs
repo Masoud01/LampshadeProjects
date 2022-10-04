@@ -7,6 +7,7 @@ public interface IInventoryRepository:IRepository<int,Inventory>
 {
     EditInventory GetDetail(int Id);
     Inventory GetByIntProductId(int Id);
-    List<InventoryViewModel> search(InventorySearchModel searchModel);
+    List<InventoryViewModel> Search(InventorySearchModel searchModel);
+    List<InventoryOperationViewModel> GetOperationLog(int InventoryId);
 
 }

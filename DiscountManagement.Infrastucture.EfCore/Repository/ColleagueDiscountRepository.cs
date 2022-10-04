@@ -19,7 +19,7 @@ public class ColleagueDiscountRepository:RepositoryBase<int, ColleagueDiscount>,
 
     public EditColleagueDiscount GetDetails(int Id)
     {
-        return _context.ColleagueDiscounts.Select(x => new EditColleagueDiscount()
+        return _context?.ColleagueDiscounts!.Select(x => new EditColleagueDiscount()
         {
             Id = x.Id,
             DiscountRate = x.DiscountRate,
@@ -29,8 +29,8 @@ public class ColleagueDiscountRepository:RepositoryBase<int, ColleagueDiscount>,
 
     public List<ColleagueDiscountViewModel> search(ColleagueDiscountSearchModel searchModel)
     {
-        var products = _shopContext.Products.Select(x => new {x.Id,x.Name }).ToList();
-        var query=_context.ColleagueDiscounts.Select(x=>new ColleagueDiscountViewModel()
+        var products = _shopContext?.Products!.Select(x => new {x.Id,x.Name }).ToList();
+        var query=_context?.ColleagueDiscounts!.Select(x=>new ColleagueDiscountViewModel()
         {
             Id = x.Id,
             ProductId = x.ProductId,
@@ -40,12 +40,12 @@ public class ColleagueDiscountRepository:RepositoryBase<int, ColleagueDiscount>,
         });
         if (searchModel.ProductId > 0)
         {
-            query = query.Where(x => x.ProductId.Equals(searchModel.ProductId));
+            query = query!.Where(x => x.ProductId.Equals(searchModel.ProductId));
         }
 
-        var discounts = query.OrderByDescending(x => x.Id).ToList();
+        var discounts = query!.OrderByDescending(x => x.Id).ToList();
         discounts.ForEach(discount=>discount.Product=
-            products.FirstOrDefault(x=>x.Id.Equals(discount.ProductId))?.Name);
+            products?.FirstOrDefault(x=>x.Id.Equals(discount.ProductId))?.Name);
         return discounts;
     }
 }

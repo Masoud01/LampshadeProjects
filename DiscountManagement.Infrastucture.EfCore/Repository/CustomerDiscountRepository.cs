@@ -11,7 +11,7 @@ public class CustomerDiscountRepository : RepositoryBase<int, CustomerDiscount>,
 {
     private readonly DiscountContext _context;
     private readonly ShopContext _shopContext;
-    public CustomerDiscountRepository(DiscountContext context,ShopContext shopContext) : base(context)
+    public CustomerDiscountRepository(DiscountContext context, ShopContext shopContext) : base(context)
     {
         _context = context;
         _shopContext = shopContext;
@@ -19,7 +19,7 @@ public class CustomerDiscountRepository : RepositoryBase<int, CustomerDiscount>,
 
     public EditCustomerDiscount GetDetails(int id)
     {
-        return _context.CustomerDiscounts.Select(
+        return _context?.CustomerDiscounts!.Select(
             x => new EditCustomerDiscount()
             {
                 Id = x.Id,
@@ -33,8 +33,8 @@ public class CustomerDiscountRepository : RepositoryBase<int, CustomerDiscount>,
 
     public List<CustomerDiscountViewModel> Search(CustomerDiscountSearchModel search)
     {
-        var products = _shopContext.Products.Select(x => new { Id = x.Id, Name = x.Name });
-        var query = _context.CustomerDiscounts.Select(
+        var products = _shopContext?.Products!.Select(x => new { Id = x.Id, Name = x.Name });
+        var query = _context?.CustomerDiscounts!.Select(
             x => new CustomerDiscountViewModel()
             {
                 ID = x.Id,
@@ -44,24 +44,29 @@ public class CustomerDiscountRepository : RepositoryBase<int, CustomerDiscount>,
                 StartDate = x.StartDate.ToFarsi(),
                 EndDate = x.EndDate.ToFarsi(),
                 EndDateGr = x.EndDate,
-                CreateDate = x.CreateDate.ToFarsi()
+                CreateDate = x.CreateDate.ToFarsi(),
+
             });
+        if (search.ProductId > 0)
+        {
+            query = query.Where(x => x.ProductId == search.ProductId);
+        }
         if (!string.IsNullOrWhiteSpace(search.StartDate))
         {
             //var startDate = DateTime.Now;
-            query = query.Where(x => x.StartDateGr > search.StartDate.ToGeorgianDateTime());
+            query = query!.Where(x => x.StartDateGr > search.StartDate.ToGeorgianDateTime());
         }
         if (!string.IsNullOrWhiteSpace(search.EndDate))
         {
-           // var endDate = DateTime.Now;
-            query = query.Where(x => x.EndDateGr > search.EndDate.ToGeorgianDateTime());
+            // var endDate = DateTime.Now;
+            query = query!.Where(x => x.EndDateGr > search.EndDate.ToGeorgianDateTime());
         }
 
-        var discount= query.OrderByDescending(
+        var discount = query!.OrderByDescending(
             x => x.ID).ToList();
-        discount.ForEach(x=>
-            x.ProductName=
-                products.First(c=>c.Id==x.ProductId).Name);
+        discount.ForEach(x =>
+            x.ProductName =
+                products?.FirstOrDefault(c => c.Id == x.ProductId)?.Name);
         return discount;
     }
 }

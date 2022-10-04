@@ -14,49 +14,49 @@ namespace ShopManagement.Application
         public OperationResult Create(CreateProduct command)
         {
             var operation = new OperationResult();
-            if (_productRepository.Exist(x => x.Name.Equals(command.Name)))
+            if (_productRepository.Exist(x => x.Name!.Equals(command.Name)))
             {
                 operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
-            var slug = command.Slug.Slugify();
+            var slug = command.Slug!.Slugify();
 
             var product =  new Product(
-                command.Name,command.Code,
-                command.UnitPrice,command.ShortDescription,
-                command.Description,command.Picture,
-                command.PictureAlt,command.PictureTitle,
-                slug,command.Keyword,
-                command.MetaDescription,command.CategoryId
+                command.Name!,command.Code!,
+                command.ShortDescription!,
+                command.Description!,command.Picture!,
+                command.PictureAlt!,command.PictureTitle!,
+                slug,command.Keyword!,
+                command.MetaDescription!,command.CategoryId
                 );
             _productRepository.Create(product);
             _productRepository.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
 
         public OperationResult Edit(EditProduct command)
         {
             var operation = new OperationResult();
             var product = _productRepository.Get(command.Id);
-            if (product == null)
+            if (product.Equals(null))
             {
                 return operation.Failed(ApplicationMessages.RecordNotFound);
             }
-            if(_productRepository.Exist(x=>x.Name.Equals(command.Name) && x.Id != command.Id))
+            if(_productRepository.Exist(x=>x.Name!.Equals(command.Name) && x.Id != command.Id))
             {
                 operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
-            var slug = command.Slug.Slugify();
+            var slug = command.Slug!.Slugify();
 
             product.EditProduct(
-                command.Name, command.Code,
-                command.UnitPrice, command.ShortDescription,
-                command.Description, command.Picture,
-                command.PictureAlt, command.PictureTitle,
-                slug, command.Keyword, 
-                command.MetaDescription,command.CategoryId
+                command.Name!, command.Code!,
+                 command.ShortDescription!,
+                command.Description!, command.Picture!,
+                command.PictureAlt!, command.PictureTitle!,
+                slug, command.Keyword!, 
+                command.MetaDescription!,command.CategoryId
                 );
             _productRepository.SaveChanges();
-            return operation.Succesdead();
+            return operation.Succedded();
         }
 
         public EditProduct GetDetial(int Id)
@@ -68,33 +68,6 @@ namespace ShopManagement.Application
         {
             return _productRepository.GetProduct();
         }
-
-        public OperationResult InStuck(int Id)
-        {
-            var operation = new OperationResult();
-            var product = _productRepository.Get(Id);
-            if (product == null)
-            {
-                return operation.Failed(ApplicationMessages.RecordNotFound);
-            }
-            product.InStuck();
-            _productRepository.SaveChanges();
-            return operation.Succesdead();
-        }
-
-        public OperationResult NotInStuck(int Id)
-        {
-            var operation = new OperationResult();
-            var product = _productRepository.Get(Id);
-            if (product == null)
-            {
-                return operation.Failed(ApplicationMessages.RecordNotFound);
-            }
-            product.NotInStuck();
-            _productRepository.SaveChanges();
-            return operation.Succesdead();
-        }
-
         public List<ProductViewModel> Search(ProductSearchModel searchModel)
         {
             return _productRepository.Search(searchModel);

@@ -12,8 +12,8 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategory
         {
             _productCategoryApplication = productCategoryApplication;
         }
-        public List<ProductCategoryViewModel>? productCategories;
-        public ProductCategorySearchModel? SearchModel;
+        public List<ProductCategoryViewModel> productCategories;
+        public ProductCategorySearchModel SearchModel;
         public void OnGet(ProductCategorySearchModel searchModel)
         {
            productCategories= _productCategoryApplication.Search(searchModel);

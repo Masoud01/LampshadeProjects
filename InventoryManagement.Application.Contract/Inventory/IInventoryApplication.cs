@@ -8,9 +8,8 @@ public interface IInventoryApplication
     OperationResult Edit(EditInventory command);
     OperationResult InCrease(InCreaseInventory command);
     OperationResult Reduce(List<ReduceInventory> command);
-    OperationResult InStuck(int id);
-    OperationResult Stuck(int id);
+    OperationResult Reduce(ReduceInventory command);
     EditInventory GetDetail(int Id);
     List<InventoryViewModel> Search(InventorySearchModel searchModel);
-
+    List<InventoryOperationViewModel> GetOperationLog(int InventoryId);
 }

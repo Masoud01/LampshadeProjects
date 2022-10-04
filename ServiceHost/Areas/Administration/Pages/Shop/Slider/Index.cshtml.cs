@@ -11,8 +11,8 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slider
     public class IndexModel : PageModel
     {
         [TempData]
-        public string? Mesagee { get; set; }
-        public List<SlideVIewModel>? SlideVIewModels;
+        public string Mesagee { get; set; }
+        public List<SlideVIewModel> SlideVIewModels;
         private readonly ISLideApplication _sLideApplication;
         public IndexModel(ISLideApplication sLideApplication)
         {
@@ -47,7 +47,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slider
         public IActionResult OnGetRemove(int Id)
         {
             var result = _sLideApplication.Remove(Id);
-            if (result.IsSuccedead)
+            if (result.IsSuccedded)
             {
                 return RedirectToPage("./Index");
             }
@@ -57,7 +57,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slider
         public IActionResult OnGeRestore(int Id)
         {
             var result = _sLideApplication.Restore(Id);
-            if (result.IsSuccedead)
+            if (result.IsSuccedded)
             {
                 return RedirectToPage("./Index");
             }

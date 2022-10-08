@@ -29,19 +29,14 @@
         <a href="javascript:void(0)" class="close-search-overlay" id="close-search-overlay">
             <i class="ion-ios-close-empty"></i>
         </a>
-
-        <!--=======  search form  =======-->
-
         <div class="search-form">
-            <form action="#">
-                <input type="search" placeholder="جستجو در محصولات ...">
+            <form method="get" asp-page="/Search">
+                <input type="search" name="value" id="value" placeholder="جستجو در محصولات ...">
                 <button type="submit">
                     <i class="ion-android-search"></i>
                 </button>
             </form>
         </div>
-
-        <!--=======  End of search form  =======-->
     </div>
 
 

@@ -31,55 +31,55 @@ public class ProductCategoryQuery : IProductCategoryQueryModel
             ?.Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now)
             ?.Select
             (
-                x => new { x.DiscountRate, x.ProductId,x.EndDate }
+                x => new { x.DiscountRate, x.ProductId, x.EndDate }
             );
         var category = _context?.ProductCategories
             !.Include(x => x.Products)
             !.ThenInclude(x => x.ProductCategory)
             !.Select(x => new
                 ProductCategoryViewQueryModel()
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    Products = MapProducts(x.Products!),
-                    Desacription = x.Description!,
-                    MetaDescription = x.MetaDescription!,
-                    Keyword = x.MetaKeyword!,
-                    Slug = x.Slug
-                }).FirstOrDefault(x=>x.Slug==slug);
-        
-            foreach (var product in category?.Products!)
             {
-                var productInventory = inventory?.FirstOrDefault(
-                    x => x.ProductId == product.Id
-                );
-                if (productInventory != null)
+                Id = x.Id,
+                Name = x.Name,
+                Products = MapProducts(x.Products!),
+                Desacription = x.Description!,
+                MetaDescription = x.MetaDescription!,
+                Keyword = x.MetaKeyword!,
+                Slug = x.Slug
+            }).FirstOrDefault(x => x.Slug == slug);
+
+        foreach (var product in category?.Products!)
+        {
+            var productInventory = inventory?.FirstOrDefault(
+                x => x.ProductId == product.Id
+            );
+            if (productInventory != null)
+            {
+                var price = productInventory.UnitPrice;
+                product.Price = price.ToMoney();
+                var discount = discounts.FirstOrDefault
+                    (x => x.ProductId == product.Id);
+                if (discount != null)
                 {
-                    var price = productInventory.UnitPrice;
-                    product.Price = price.ToMoney();
-                    var discount = discounts.FirstOrDefault
-                        (x => x.ProductId == product.Id);
-                    if (discount != null)
-                    {
-                        var discountRate = discounts?.FirstOrDefault
-                        (x => x.ProductId == product.Id
-                        )?.DiscountRate;
-                        product.DiscountRate = Convert.ToInt32(discountRate);
-                        product.HasDiscount = discountRate > 0;
-                        product.DiscountExpireDate = discount.EndDate.ToDiscountFormat();
-                        var discountAmount = Math.Round((double)((price * discountRate) / 100)!);
-                        product.PriceWithDiscount = (price - discountAmount).ToMoney();
-                    }
+                    var discountRate = discounts?.FirstOrDefault
+                    (x => x.ProductId == product.Id
+                    )?.DiscountRate;
+                    product.DiscountRate = Convert.ToInt32(discountRate);
+                    product.HasDiscount = discountRate > 0;
+                    product.DiscountExpireDate = discount.EndDate.ToDiscountFormat();
+                    var discountAmount = Math.Round((double)((price * discountRate) / 100)!);
+                    product.PriceWithDiscount = (price - discountAmount).ToMoney();
                 }
-
-
             }
-        
+
+
+        }
+
         return category;
     }
 
 
-public List<ProductCategoryViewQueryModel> GetProductCategory()
+    public List<ProductCategoryViewQueryModel> GetProductCategory()
     {
         return _context!.ProductCategories?.Select(x =>
             new ProductCategoryViewQueryModel()

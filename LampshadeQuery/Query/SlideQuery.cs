@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LampshadeQuery.Contract.Slides;
+using Microsoft.EntityFrameworkCore;
 using ShopManagement.Infrastructure.EFCore;
 
 namespace LampshadeQuery.Query
@@ -28,9 +29,10 @@ namespace LampshadeQuery.Query
                     Heading = x.Heading,
                     Title = x.Title,
                     Text = x.Text,
-                    Link = x.Link
+                    Link = x.Link,
+                    
                 });
-            return query!.ToList();
+            return query.AsNoTracking().ToList();
         }
     }
 }

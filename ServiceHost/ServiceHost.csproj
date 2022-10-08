@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Content Remove="Pages\ProductCategory.cshtml" />
+    <Content Remove="Pages\Search.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Pages\Search.cshtml" />
     <None Include="Pages\ProductCategory.cshtml" />
   </ItemGroup>
 

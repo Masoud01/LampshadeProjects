@@ -1,5 +1,6 @@
 ﻿using _0_Framework.Application;
 using _0_Framework.Inrastuchture;
+using Microsoft.EntityFrameworkCore;
 using ShopManagement.Application.Contracts.Slider;
 using ShopManagement.Domain.SliderAgg;
 namespace ShopManagement.Infrastructure.EFCore.Repository
@@ -23,8 +24,8 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Title=x.Title,
                 Text=x.Text,
                 BtnText=x.BtnText,
-                Link = x.Link
-            }).SingleOrDefault(x => x.Id.Equals(id));
+                Link = x.Link,
+            }).AsNoTracking().SingleOrDefault(x => x.Id.Equals(id));
         }
 
         public List<SlideVIewModel> GetList()
@@ -37,7 +38,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Heading = x.Heading,
                 IsRemoved = x.IsRemoved,
                 CreateDate = x.CreateDate.ToFarsi()
-            }).OrderByDescending(x => x.Id).ToList();
+            }).AsNoTracking().OrderByDescending(x => x.Id).ToList();
         }
     }
 }

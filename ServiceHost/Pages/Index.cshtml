@@ -3,9 +3,10 @@
 @{
     ViewData["Title"] = "پروژه فروشگاهی";
 }
-<vc:slider></vc:slider>
+
+@await Component.InvokeAsync("Slider")
 @await Component.InvokeAsync("ProductCategory")
-<vc:product-category-with-product></vc:product-category-with-product>
+@await Component.InvokeAsync("ProductCategoryWithProduct")
 @await Component.InvokeAsync("LatestProduct")
 
 <!--====================  banner hover area ====================-->

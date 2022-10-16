@@ -20,7 +20,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             {
                 Id=x.Id,
                 ProductId=x.ProductId,
-                Picture=x.Picture,
+              //  Picture=x.Picture,
                 PictureAlt=x.PictureAlt,
                 PictureTitle=x.PictureTitle
             }).SingleOrDefault(x => x.Id == Id);
@@ -43,6 +43,16 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 query = query!.Where(x => x.ProductName!.Contains(searchModel.ProductName));
             }
             return query!.OrderByDescending(x => x.Id).ToList();
+        }
+
+        public ProductPicture GetWithProductAndCategoryId(int id)
+        {
+            return _context?
+                .ProductPictures!
+                .Include(
+                    x => x.Product
+                ).ThenInclude(x => x.ProductCategory)
+                .FirstOrDefault(x => x.Id == id);
         }
     }
 }

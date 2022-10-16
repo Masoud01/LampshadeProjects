@@ -1,7 +1,6 @@
 ﻿@page
 @model ServiceHost.Pages.ProductCategoryModel
 @{
-    ViewData["Title"] = $"گروه محصولات ";
 }
 <div class="breadcrumb-area section-space--half">
     <div class="container wide">
@@ -9,11 +8,11 @@
             <div class="col-lg-12">
                 <div class="breadcrumb-wrapper breadcrumb-bg">
                     <div class="breadcrumb-content">
-                        <h2 class="breadcrumb-content__title">@Model.ProductCategory.Name</h2>
+                        <h1 class="breadcrumb-content__title">@Model.ProductCategory.Name</h1>
+                        <h2>@Model.ProductCategory.Desacription</h2>
                         <ul class="breadcrumb-content__page-map">
                             <li><a asp-page="./Index">صفحه اصلی</a></li>
                             <li class="active">@Model.ProductCategory.Name</li>
-                            <h3>@Model.ProductCategory.Desacription</h3>
                         </ul>
                     </div>
                 </div>
@@ -21,6 +20,7 @@
         </div>
     </div>
 </div>
+
 <div class="page-content-area">
     <div class="container">
         <div class="row">
@@ -29,7 +29,6 @@
                     <div class="page-content-wrapper">
                         <div class="row">
                             <div class="col-lg-12">
-                                <!--=======  shop page header  =======-->
                                 <div class="shop-header">
                                     <div class="shop-header__left">
                                         <div class="shop-header__left__message">
@@ -60,47 +59,31 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--=======  End of shop page header  =======-->
                             </div>
 
                             <div class="col-lg-12">
                                 <div class="shop-page-content">
-
                                     <div class="row shop-product-wrap grid three-column">
                                         @foreach (var product in Model.ProductCategory.Products)
                                         {
                                             <div class="col-12 col-lg-4 col-md-4 col-sm-6">
                                                 <div class="single-grid-product grid-view-product">
                                                     <div class="single-grid-product__image">
-                                                        <div class="single-grid-product__label">
-                                                            @if (product.HasDiscount)
-                                                            {
+                                                        @if (product.HasDiscount)
+                                                        {
+                                                            <div class="single-grid-product__label">
                                                                 <span class="sale">-@product.DiscountRate%</span>
-                                                                <span class="new">جدید</span>
-                                                            }
-                                                            
-                                                        </div>
-                                                        <a href="single-product.html">
-                                                            <img src="@product.Picture"
-                                                             class="img-fluid"
-                                                             alt="@product.PictureAlt">
-                                                            
+                                                            </div>
+                                                        }
+                                                        <a asp-page="/Product" asp-route-id="@product.Slug">
+                                                            <img src="~/ProductPictures/@product.Picture" class="img-fluid"
+                                                             alt="@product.PictureAlt" title="@product.PictureTitle">
                                                         </a>
-                                                        <div class="hover-icons">
-                                                            <a href="javascript:void(0)">
-                                                                <i class="ion-bag"></i>
-                                                            </a>
-                                                            <a href="javascript:void(0)"
-                                                           data-toggle="modal"
-                                                           data-target="#quick-view-modal-container">
-                                                                <i class="ion-android-open"></i>
-                                                            </a>
-                                                        </div>
                                                     </div>
                                                     <div class="single-grid-product__content">
                                                         <div class="single-grid-product__category-rating">
                                                             <span class="category">
-                                                                <a href="shop-left-sidebar.html">@product.Category</a>
+                                                                <a asp-page="/ProductCategory" asp-route-id="@Model.ProductCategory.Slug">@Model.ProductCategory.Name</a>
                                                             </span>
                                                             <span class="rating">
                                                                 <i class="ion-android-star active"></i>
@@ -111,33 +94,31 @@
                                                             </span>
                                                         </div>
 
-                                                        <h3 class="single-grid-product__title">
-                                                            <a asp-page="/ProductDetails">
-                                                                @product.ProductName
-                                                            </a>
-                                                        </h3>
-                                                        @if (product.HasDiscount)
-                                                        {
-                                                            <p class="single-grid-product__price">
-                                                                <span class="discounted-price">@product.PriceWithDiscount ریال</span>
-                                                                <span class="main-price discounted">@product.Price ریال</span>
-                                                            </p>
-                                                        }
+                                                        <h2 class="single-grid-product__title">
+                                                            <a asp-page="/Product" asp-route-id="@product.Slug">@product.ProductName</a>
+                                                        </h2>
                                                         <p class="single-grid-product__price">
-                                                            <span class="main-price">@product.Price ریال</span>
+                                                            @if (product.HasDiscount)
+                                                            {
+                                                                <span class="discounted-price">@product.PriceWithDiscount تومان</span>
+                                                                <span class="main-price discounted">@product.Price تومان</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="main-price">@product.Price تومان</span>
+                                                            }
                                                         </p>
                                                         @if (product.HasDiscount)
                                                         {
                                                             <div class="product-countdown" data-countdown="@product.DiscountExpireDate"></div>
                                                         }
-                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                         }
                                     </div>
-
                                 </div>
+
                                 <div class="pagination-area">
                                     <div class="pagination-area__left">
                                         Showing 1 to 9 of 11 (2 Pages)
@@ -161,4 +142,3 @@
         </div>
     </div>
 </div>
-

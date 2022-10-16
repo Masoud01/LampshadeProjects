@@ -17,7 +17,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             return _context!.Slides?.Select(x => new EditSlide()
             {
                 Id = id,
-                Picture=x.Picture,
                 PictureAlt=x.PictureAlt,
                 PictureTitle=x.PictureTitle,
                 Heading=x.Heading,
@@ -25,7 +24,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Text=x.Text,
                 BtnText=x.BtnText,
                 Link = x.Link,
-            }).AsNoTracking().SingleOrDefault(x => x.Id.Equals(id));
+            }).AsNoTracking().FirstOrDefault(x => x.Id.Equals(id));
         }
 
         public List<SlideVIewModel> GetList()

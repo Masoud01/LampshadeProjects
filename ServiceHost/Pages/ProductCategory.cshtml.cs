@@ -1,4 +1,5 @@
 using LampshadeQuery.Contract.ProductCategory;
+using LampshadeQuery.Query;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -6,17 +7,17 @@ namespace ServiceHost.Pages
 {
     public class ProductCategoryModel : PageModel
     {
-        private readonly IProductCategoryQueryModel _categoryQueryModel;
+        public ProductCategoryViewQueryModel ProductCategory;
+        private readonly IProductCategoryQueryModel _productCategoryQuery;
 
-        public ProductCategoryModel(IProductCategoryQueryModel categoryQueryModel)
+        public ProductCategoryModel(IProductCategoryQueryModel productCategoryQuery)
         {
-            _categoryQueryModel = categoryQueryModel;
+            _productCategoryQuery = productCategoryQuery;
         }
 
-        public ProductCategoryViewQueryModel ProductCategory;
         public void OnGet(string slug)
         {
-            ProductCategory = _categoryQueryModel.GetCategoryWithProductBy(slug); 
+            ProductCategory = _productCategoryQuery.GetCategoryWithProductBy(slug);
         }
     }
 }

@@ -25,7 +25,7 @@ public class ProductCategoryQuery : IProductCategoryQueryModel
     {
         var inventory = _inventoryContext?.Inventory!
             .Select(
-                x => new { x.ProductId, x.UnitPrice }
+                x => new { x.ProductId, x.UnitPrice ,x.InStuck}
             );
         var discounts = _discountContext?.CustomerDiscounts
             ?.Where(x => x.StartDate < DateTime.Now && x.EndDate > DateTime.Now)
@@ -51,7 +51,7 @@ public class ProductCategoryQuery : IProductCategoryQueryModel
         foreach (var product in category?.Products!)
         {
             var productInventory = inventory?.FirstOrDefault(
-                x => x.ProductId == product.Id
+                x => x.ProductId == product.Id && x.InStuck==true
             );
             if (productInventory != null)
             {

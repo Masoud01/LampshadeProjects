@@ -39,7 +39,10 @@ namespace ShopManagement.Domain.SliderAgg
             string? pictureTitle, string? heading,
             string? title, string? text, string? btnText, string? link)
         {
-            Picture = picture;
+            if (!string.IsNullOrWhiteSpace(picture))
+            {
+                Picture = picture;
+            }
             PictureAlt = pictureAlt;
             PictureTitle = pictureTitle;
             Heading = heading;

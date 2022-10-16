@@ -1,5 +1,4 @@
 using LampshadeQuery.Contract.Product;
-using LampshadeQuery.Contract.ProductCategory;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -19,7 +18,7 @@ namespace ServiceHost.Pages
         public void OnGet(string value)
         {
             Value = value;
-            Product = _productQuery.Search(value); 
+            Product = _productQuery.Search(value);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using ShopManagement.Application.Contracts.ProductCategoryContract;
 using _0_Framework.Application;
+using Microsoft.AspNetCore.Http;
+
 namespace ShopManagement.Application.Contracts.Product
 {
     public class CreateProduct
@@ -14,7 +16,7 @@ namespace ShopManagement.Application.Contracts.Product
         [Required(ErrorMessage = VlidateMessage.IsRequired)]
         public string ? Description { get;  set; }
         [Required(ErrorMessage = VlidateMessage.IsRequired)]
-        public string ? Picture { get;  set; }
+        public IFormFile ? Picture { get;  set; }
         [Required(ErrorMessage = VlidateMessage.IsRequired)]
         public string ? PictureAlt { get;  set; }
         [Required(ErrorMessage = VlidateMessage.IsRequired)]

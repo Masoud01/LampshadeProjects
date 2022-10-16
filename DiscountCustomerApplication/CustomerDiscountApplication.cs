@@ -35,10 +35,7 @@ namespace DiscountManagement.Application
                 return operation.Failed(ApplicationMessages.RecordNotFound);
             }
 
-            if (_customerDiscountRepository.Exist(x => x.DiscountRate == command.DiscountRate && x.Id != command.Id))
-            {
-                return operation.Failed(ApplicationMessages.DuplicatedRecord);
-            }
+            
             var startDate = command.StartDate!.ToGeorgianDateTime();
             var endTime = command.EndDate!.ToGeorgianDateTime();
             customerDiscount.Edit(command.ProductId,command.DiscountRate,

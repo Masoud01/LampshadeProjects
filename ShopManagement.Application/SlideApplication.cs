@@ -7,9 +7,12 @@ namespace ShopManagement.Application
     public class SlideApplication : ISLideApplication
     {
         private readonly ISlideRepositroy _slideRepositroy;
-        public SlideApplication(ISlideRepositroy slideRepositroy)
+        private readonly IFileUploader _fileUploader;
+
+        public SlideApplication(ISlideRepositroy slideRepositroy, IFileUploader fileUploader)
         {
             _slideRepositroy = slideRepositroy;
+            _fileUploader = fileUploader;
         }
         public OperationResult Create(CreateSlide command)
         {
@@ -18,8 +21,11 @@ namespace ShopManagement.Application
             {
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
+
+            var path = "slides";
+            var picturePath = _fileUploader.Upload(command.Picture!, path);
             var slider = new Slider(
-                command.Picture, command.PictureAlt,
+                picturePath, command.PictureAlt,
                 command.PictureTitle, command.Heading,
                 command.Title, command.Text,
                 command.BtnText,command.Link);
@@ -40,8 +46,10 @@ namespace ShopManagement.Application
             {
                 return operation.Failed(ApplicationMessages.DuplicatedRecord);
             }
+            var path = "slides";
+            var picturePath = _fileUploader.Upload(command.Picture!, path);
             slide.Edit(
-                command.Picture, command.PictureAlt,
+                picturePath, command.PictureAlt,
                 command.PictureTitle, command.Heading,
                 command.Title, command.Text, command.BtnText,command.Link);
             _slideRepositroy.SaveChanges();

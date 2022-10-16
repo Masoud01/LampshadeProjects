@@ -37,7 +37,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Slider
         public IActionResult OnGetEdit(int Id)
         {
             var slider = _sLideApplication.GetDetail(Id);
-            return Partial("./Edit", slider);
+            return Partial("Edit", slider);
         }
         public JsonResult OnPostEdit(EditSlide command)
         {

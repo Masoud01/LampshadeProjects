@@ -298,3 +298,4 @@ D:\Projects\Asp.Net Core.Projects\LampshadeProject\ServiceHost\obj\Debug\net6.0\
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ServiceHost\obj\Debug\net6.0\ServiceHost.pdb
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ServiceHost\obj\Debug\net6.0\ServiceHost.genruntimeconfig.cache
 D:\Projects\Asp.Net Core.Projects\LampshadeProject\ServiceHost\obj\Debug\net6.0\ref\ServiceHost.dll
+D:\Projects\Asp.Net Core.Projects\LampshadeProject\ServiceHost\bin\Debug\net6.0\Milvasoft.FormFileOperations.dll

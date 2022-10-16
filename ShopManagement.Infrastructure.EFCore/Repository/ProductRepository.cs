@@ -26,7 +26,7 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Description = x.Description,
                 Keyword = x.Keyword,
                 MetaDescription = x.MetaDescription,
-                Picture = x.Picture,
+                //Picture = x.Picture,
                 PictureAlt = x.PictureAlt,
                 PictureTitle = x.PictureTitle,
                 ShortDescription = x.ShortDescription,
@@ -70,6 +70,13 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
                 Id = x.Id,
                 Name = x.Name
             }).ToList();
+        }
+
+        public Product GetProductWithCategory(int id)
+        {
+            return _context.Products!
+                .Include(x=>x.ProductCategory)
+                .FirstOrDefault(x=>x.Id==id);
         }
     }
 }

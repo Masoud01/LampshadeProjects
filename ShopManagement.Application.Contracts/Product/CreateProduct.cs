@@ -15,7 +15,8 @@ namespace ShopManagement.Application.Contracts.Product
         public string ? ShortDescription { get;  set; }
         [Required(ErrorMessage = VlidateMessage.IsRequired)]
         public string ? Description { get;  set; }
-        [Required(ErrorMessage = VlidateMessage.IsRequired)]
+
+        [MaxFileSize(4*1024*1024,ErrorMessage =VlidateMessage.MaxFileSize)]
         public IFormFile ? Picture { get;  set; }
         [Required(ErrorMessage = VlidateMessage.IsRequired)]
         public string ? PictureAlt { get;  set; }

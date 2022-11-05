@@ -214,6 +214,7 @@ public class ProductQuery : IProductQuery
             })
             .Where(x=>x.IsCancel.Equals(false))
             .Where(x=>x.IsConfirm.Equals(true))
+            .OrderByDescending(x=>x.CommentId)
             .ToList();
     }
 

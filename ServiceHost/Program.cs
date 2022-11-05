@@ -1,4 +1,5 @@
 using _0_Framework.Application;
+using BlogManagement.Infrastructure.Configuration;
 using DiscountManagement.Configuration;
 using InventoryManagement.Infrastructure.Configuration;
 using ServiceHost;
@@ -12,9 +13,10 @@ var connectionString = builder.Configuration.GetConnectionString("LampshadeDB");
 builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 //Services Project
-ShopManagementBootstrapper.Configure(builder.Services, connectionString);
-DiscountManagementBootstrapper.Configuration(builder.Services, connectionString);
-InventoryBootstrapper.Configure(builder.Services, connectionString);
+ShopManagementBootstrapper.Configure(services:builder.Services,connectionString: connectionString);
+DiscountManagementBootstrapper.Configuration(services:builder.Services,connectionString: connectionString);
+InventoryBootstrapper.Configure(services: builder.Services,connectionString: connectionString);
+BlogManagementBootstrapper.Configure(services:builder.Services,ConnectionString:connectionString);
 builder.Services.AddTransient<IFileUploader, FileUploader>();
 var app = builder.Build();
 
